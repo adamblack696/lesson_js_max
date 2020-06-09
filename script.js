@@ -5,8 +5,11 @@ dayWeekRu = ['понедельник', 'вторник', 'среда', 'четв
 dayWeekEn = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
 namePerson = 'Артем';
 
-if(language === 'ru')	console.log(dayWeekRu);
-	else if(language === 'en') console.log(dayWeekEn);
+if(language === 'ru')	{
+	console.log(dayWeekRu)
+} else if(language === 'en') {
+	console.log(dayWeekEn)
+};
 
 switch (language) {
 	case 'ru':
