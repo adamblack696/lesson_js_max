@@ -1,16 +1,26 @@
-let num = 266219;
+'use strict';
 
+const language = document.querySelector('html').attributes.lang.value,
+dayWeekRu = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'],
+dayWeekEn = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+namePerson = 'Артем';
 
-let numArr = num.toString().split('');
+if(language === 'ru')	console.log(dayWeekRu);
+	else if(language === 'en') console.log(dayWeekEn);
 
-result = numArr.reduce((akk, number) => {
-	return akk * number;
-}, 1);
+switch (language) {
+	case 'ru':
+		console.log(dayWeekRu);
+		break;
+	case 'en':
+		console.log(dayWeekEn);
+		break;
+}
 
-console.log(result);
+const arr = [dayWeekRu , dayWeekEn];
+language === 'ru' ? console.log(arr[0]):
+console.log(arr[1]);
 
-result = result ** 3;
-	
-console.log(result);
-
-console.log(result.toString().slice(0, 2));
+namePerson === 'Артем' ?  console.log(namePerson + ' директор'):
+namePerson === 'Максим' ? console.log(namePerson + ' преподаватель'):
+console.log(namePerson + 'студент');
