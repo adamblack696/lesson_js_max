@@ -1,28 +1,28 @@
 'use strict';
 
-const language = document.querySelector('html').attributes.lang.value,
+const language = confirm('Ваш язык русский?'),
 dayWeekRu = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'],
 dayWeekEn = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
 namePerson = 'Артем';
 
-if(language === 'ru')	{
+if(language)	{
 	console.log(dayWeekRu)
-} else if(language === 'en') {
+} else {
 	console.log(dayWeekEn)
 };
 
 switch (language) {
-	case 'ru':
+	case true:
 		console.log(dayWeekRu);
 		break;
-	case 'en':
+	case false:
 		console.log(dayWeekEn);
 		break;
 }
 
 let days = [];
-		days['ru'] = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
-		days['en'] = ['monday', 'thuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+		days[true] = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+		days[false] = ['monday', 'thuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 console.log('Дни недели: ', days[language]);
 
