@@ -23,9 +23,8 @@ switch (language) {
 let days = [];
 		days['ru'] = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
 		days['en'] = ['monday', 'thuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-days.forEach((day) => {
-	console.log(day);
-});
+
+console.log('Дни недели: ', days[language]);
 
 namePerson === 'Артем' ?  console.log(namePerson + ' директор'):
 namePerson === 'Максим' ? console.log(namePerson + ' преподаватель'):
