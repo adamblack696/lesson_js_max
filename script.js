@@ -20,9 +20,12 @@ switch (language) {
 		break;
 }
 
-const arr = [dayWeekRu , dayWeekEn];
-language === 'ru' ? console.log(arr[0]):
-console.log(arr[1]);
+let days = [];
+		days['ru'] = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+		days['en'] = ['monday', 'thuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+days.forEach((day) => {
+	console.log(day);
+});
 
 namePerson === 'Артем' ?  console.log(namePerson + ' директор'):
 namePerson === 'Максим' ? console.log(namePerson + ' преподаватель'):
