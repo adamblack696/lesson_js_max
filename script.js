@@ -1,21 +1,33 @@
 'use strict';
 
-let message = prompt('Введите любую строку', '');
+const arrCreate = () => {
+	let arr = prompt('Введите 7 любых многозначных чисел через запятую', '');
+	return arr.split(',');
+}
 
-const stringTrim = (string) => {
-	if(typeof string !== 'string') {
-		console.log('не строка, введите строку');
-		string = prompt('Введите любую строку', '')
-	} else {
-		string = string.trim();
-	}
-	return hideSimbol(string);
+const isNumber = (item) => {
+	return !isNaN(parseFloat(item)) && isFinite(item);
 }
-const hideSimbol = (string) => {
-	if(string.length > 30) {
-		return string.slice(0, 30) + '...';
-	} else {
-		return string;
-	}
+
+const arrCheckItem = () => {
+	let arr = arrCreate();
+	let newArr = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if(!isNumber(arr[i])) {
+			console.log('work1');
+			return arrCheckItem();
+		} 
+		if(+arr[i][0] === 2 || +arr[i][0] === 4) {
+			console.log('work2');
+			newArr.push(arr[i]);
+		} 
+		if(i === (arr.length - 1)) {
+			console.log('work3');
+			return newArr;
+		}
+	};
 }
-console.log(stringTrim(message));
+console.log(arrCheckItem());
+
+
