@@ -2,7 +2,11 @@
 
 const arrCreate = () => {
 	let arr = prompt('Введите 7 любых многозначных чисел через запятую', '');
-	return arr.split(',');
+	if(arr) {
+		return arr.split(',');
+	} else {
+		return false;
+	}
 }
 
 const isNumber = (item) => {
@@ -31,3 +35,20 @@ const arrCheckItem = () => {
 console.log(arrCheckItem());
 
 
+const primeNumbersCreate = (start, finish) => {
+	let arr = [];
+	for(let startIteration = start + 1; startIteration <= finish; startIteration++) {
+		for(let i = 1; i <= startIteration; i++) {
+			if((startIteration % i === 0) && (i !== startIteration && i !== 1)) {
+				// если старт делится на какое то число помимо себя самого (старата) и 1, то цикл прекращается и продолжается верхний цикл, в котором старт увеличивается
+				break;
+			} else if(i === startIteration) {
+				arr.push([startIteration, `Делители этого числа: 1 и ${startIteration}`]);
+			}
+		}
+	}
+	return arr;
+}
+
+const arr = primeNumbersCreate(1, 100);
+console.table(arr);
