@@ -1,20 +1,17 @@
 'use strict';
-
 const weekWrap = document.querySelector('.week ul');
 const week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sanday'];
 const date = new Date();
-
-week.forEach((day) => {
-	weekWrap.insertAdjacentHTML('beforeend', `<li>${day}</li>`);
-});
-
-const weekList = document.querySelectorAll('.week li');
-
-weekList.forEach((day, index) => {
-	if(day.textContent === 'saturday' || day.textContent === 'sanday') {
-		day.classList.add('weekend');
+const whichWeekShow = (index) => {
+	if(index === 5 || index === 6) {
+		return 'weekend';
+	} else if(index + 1 === date.getDay()) {
+		return 'this';
+	} else {
+		return 'day';
 	}
-	if(index + 1 === date.getDay()) {
-		day.classList.add('this');
-	}
+}
+week.forEach((day, index) => {
+	const className = whichWeekShow(index);
+	weekWrap.insertAdjacentHTML('beforeend', `<li class='${className}'>${day}</li>`);
 });
