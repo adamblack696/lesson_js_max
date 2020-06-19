@@ -1,0 +1,12 @@
+h1 {
+	text-align: center;
+}
+.week li {
+	list-style-type: none;
+}
+.weekend {
+	font-style: italic;
+}
+.this {
+	font-weight: bold;
+}
