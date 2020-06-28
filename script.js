@@ -1,3 +1,4 @@
+  
 'use strict';
 
 const time = document.querySelector('.time');
@@ -13,7 +14,7 @@ const start = () => {
 						'июль', 'август', 'сентябрь', 
 						'октябрь', 'ноябрь', 'декабрь'],
 		getDay: () => {
-			const day = watch.weekDay[date.getDay() - 1];
+			const day = watch.weekDay[date.getDay()];
 			return watch.getDay = day[0].toUpperCase() + day.slice(1);
 		},
 		declensionMonth: () => {
@@ -38,7 +39,7 @@ const start = () => {
 			const argString = arg.toString();
 			if(argString[argString.length - 1] === '1') {
 				return argString + ' ' + word + 'а';
-			} else if(argString[0] !== 1 && (argString[argString.length - 1] === 2 || argString[argString.length - 1] === 3 || argString[argString.length - 1] === '4')) {
+			} else if(argString[0] !== 1 && (argString[argString.length - 1] === '2' || argString[argString.length - 1] === '3' || argString[argString.length - 1] === '4')) {
 				return argString + ' ' + word + 'ы';
 			} else {
 				return argString + ' ' + word;
