@@ -14,7 +14,7 @@ const start = () => {
 						'июль', 'август', 'сентябрь', 
 						'октябрь', 'ноябрь', 'декабрь'],
 		getDay: () => {
-			const day = watch.weekDay[date.getDay()];
+			const day = watch.weekDay[date.getDay() - 1];
 			return watch.getDay = day[0].toUpperCase() + day.slice(1);
 		},
 		declensionMonth: () => {
