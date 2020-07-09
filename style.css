@@ -11,5 +11,6 @@
 .change {
 	background: #fff;
 	border: 1px solid #000;
-	color: transparent;
+	width: 100px;
+	height: 30px;
 }
