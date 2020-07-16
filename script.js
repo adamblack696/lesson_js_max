@@ -11,15 +11,10 @@ const showColor = () => {
 }
 const hexGen = () => Math.floor(Math.random() * (255));
 
-const hexChange16 = () => {
-	const n = hexGen();
-	return arr16[parseInt(n / 16)] + '' + arr16[n % 16];
-};
-
 const colorGen = () => {
 	let acc = '';
 	for(let i = 0; i < 3; i++) {
-		acc += hexChange16();
+		acc += hexGen().toString(16);
 	}
 	return acc;
 }
