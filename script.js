@@ -1,23 +1,19 @@
 'use strict';
 
-const color = document.querySelector('.collor'),
-			change = document.querySelector('.change');
+const users = [];
 
-const showColor = () => {
-	document.body.style.backgroundColor = color.textContent;
-	change.style.color = color.textContent;
+const isString = (string) => {
+	if(string) {
+		return string === string.match(/[A-Za-z]/g).join('');
+	} 
+	return false;
 }
-const hexGen = () => Math.floor(Math.random() * (255));
 
-const colorGen = () => {
-	let acc = '';
-	for(let i = 0; i < 3; i++) {
-		acc += hexGen().toString(16);
-	}
-	return acc;
+const question = () => {
+	users.push({});
+	do {
+		users[0].name = prompt('Введите Имя и Фамилию', ''),
+		users[0].login = prompt('Введите логин', ''),
+		users[0].password = prompt('Введите пароль', '');
+	} while(isString())
 }
-showColor();
-change.addEventListener('click', () => {
-	color.textContent = '#' + colorGen();
-	showColor();
-});
