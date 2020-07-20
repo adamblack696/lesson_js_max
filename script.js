@@ -108,6 +108,10 @@ ul.addEventListener('click', (event) => {
 		users.find((obj) => {
 			const index = text.indexOf(JSON.parse(obj).name[0]);
 			if (index > -1) {
+				console.log(h1.textContent.indexOf(JSON.parse(obj).name[0]));
+				if(h1.textContent.indexOf(JSON.parse(obj).name[0])) {
+					h1.textContent = 'Привет Аноним!';
+				}
 				users.splice(obj, 1);
 				localStorage.setItem('users', JSON.stringify(users));
 				return true;
