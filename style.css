@@ -15,3 +15,12 @@ button {
 button:hover {
 	background: rgb(214, 1, 1);
 }
+li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+li > button {
+	margin-left: 10px;
+}
